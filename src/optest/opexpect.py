@@ -85,7 +85,8 @@ def handle_opal_err(pty, is_assert):
 
     # hmm,  might need to move this elsewhere
     l = super(spawn, pty).expect(["boot_entry.*\r\n",
-                                   "Initiated MPIPL", pexpect.TIMEOUT],
+                                   "Initiated MPIPL",
+                                   "NVRAM: Failed to load", pexpect.TIMEOUT],
                                    timeout=10)
     log = log + pty.before + pty.after
     if is_assert:

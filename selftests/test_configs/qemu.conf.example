@@ -1,6 +1,6 @@
 [op-test]
 bmc_type=qemu
-qemu_binary=../qemu/ppc64-softmmu/qemu-system-ppc64
+qemu_binary=../qemu/build/qemu-system-ppc64
 flash_skiboot=test_data/skiboot.lid
 flash_kernel=test_data/vmlinux
 flash_initramfs=test_data/initramfs

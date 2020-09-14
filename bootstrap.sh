@@ -2,7 +2,7 @@
 
 # there's a lot of distros where packaged qemu eithe don't support the powernv
 # or only supports an old one, so build our own
-if ! [ -f qemu/ppc64-softmmu/qemu-system-ppc64 ] ; then
+if ! [ -f qemu/build/qemu-system-ppc64 ] ; then
 	ci/build-qemu-powernv.sh
 fi
 
@@ -15,7 +15,7 @@ if ! [ -f ./qemu.conf ] ; then
 	cat - > qemu.conf <<EOF
 [op-test]
 bmc_type=qemu
-qemu_binary=qemu/ppc64-softmmu/qemu-system-ppc64
+qemu_binary=qemu/build/qemu-system-ppc64
 flash_skiboot=skiboot.lid
 flash_kernel=vmlinux
 flash_initramfs=initramfs
